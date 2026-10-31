@@ -1,0 +1,40 @@
+# Compiled binaries / build artifacts
+**/bin/
+**/obj/
+/dist/
+/TestResults/
+**/*.pdb
+**/*.deps.json
+**/*.runtimeconfig.json
+
+# IDE / user-local caches
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local patches, backups, archives, temporary files
+/_backups/
+/SwitcherMax_IconPatch_*/
+/SwitcherMax_NotificationIcon_*/
+/SwitcherMax_GitHubPrep_*/
+*.backup_*
+*.bak
+*.tmp
+*.log
+*.zip
+*.7z
+
+# Never upload local runtime settings, credentials or secrets
+settings.json
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+*secret*.json
+*credentials*.json
