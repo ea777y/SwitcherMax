@@ -59,7 +59,12 @@ public static class Conversion
         for (int i = 0; i < source.Length; i++)
         {
             char c = source[i];
-            if (smartPunctuation && IsSentencePunctuation(source, i))
+            // English Shift+/ produces '?', but the same physical key in Russian produces ','.
+            // Prefer physical-key conversion in EN -> RU, even when smart punctuation is enabled.
+            // A literal question mark is ambiguous; this rule deliberately favors the comma key.
+            if (smartPunctuation
+                && !(direction == ConversionMode.EnglishToRussian && c == '?')
+                && IsSentencePunctuation(source, i))
             {
                 output.Append(c);
                 continue;
